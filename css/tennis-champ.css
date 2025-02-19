@@ -2224,6 +2224,19 @@ blockquote {
   color: var(--black);
 }
 
+.exp-slider_item-copy {
+  aspect-ratio: 320 / 465;
+  border-radius: 2.25rem;
+  flex: none;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 20rem;
+  padding: 1rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
 @media screen and (max-width: 991px) {
   .styleguide_block.cc-grid {
     display: flex;
@@ -3036,6 +3049,10 @@ blockquote {
 
   .exp-slider_arrow.cc-right {
     left: 3.5rem;
+  }
+
+  .exp-slider_item-copy {
+    width: 100%;
   }
 }
 
