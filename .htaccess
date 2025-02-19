@@ -1,6 +1,6 @@
 RewriteEngine On
 
-# Remove .html extension
+# Remove .html extension (and trailing slash if present)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} \.html$
 RewriteRule ^(.*)\.html$ $1 [R=301,L]
@@ -8,3 +8,8 @@ RewriteRule ^(.*)\.html$ $1 [R=301,L]
 # Redirect /index.html to /
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
 RewriteRule ^index\.html$ / [R=301,L]
+
+# Add trailing slash if not present (optional, but good practice)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(/)$
+RewriteRule ^(.*)$ $1/ [L,R=301]
